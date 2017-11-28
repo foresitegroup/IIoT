@@ -1,0 +1,120 @@
+/*
+Theme Name: IIoT
+Author: Foresite Group
+Author URI: https://foresitegrp.com
+Description: Custom theme designed for IIoT. Child theme of Twenty Seventeen.
+Version: 1.0
+*/
+
+BODY {
+  margin: 0;
+  padding: 0;
+  background: #FFFFFF;
+  color: #2D2D2D;
+  font-family: 'Exo', sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 1.3em;
+}
+
+IMG { border: 0; }
+
+.site-width {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.site-width:after,
+.cf:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+#header {
+  background-image: linear-gradient(to right, #FFFFFF 50%, #F7941D 50%);
+}
+
+#header .site-width {
+  padding: 15px 0;
+  background-image: linear-gradient(115deg, #FFFFFF 320px, #F7941D 320px);
+  position: relative;
+}
+
+#logo { display: inline-block; vertical-align: middle; }
+
+#logo IMG {
+  width: 200px;
+  height: auto;
+}
+
+#header .tagline {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  width: 55%;
+  text-align: right;
+  font-weight: 900;
+  font-size: 48px;
+  line-height: 1em;
+  text-transform: uppercase;
+}
+
+#header .tagline SPAN {
+  display: block;
+  font-weight: 600;
+  font-size: 43%;
+  line-height: 1em;
+  text-transform: none;
+}
+
+.home #content {
+  background-image: url(images/wifi.png), linear-gradient(to right, #282828 28%, transparent 28%);
+  background-repeat: no-repeat;
+  background-size: auto 80%, auto;
+  background-position: 103% center;
+}
+
+.home #content .content { display: flex; }
+
+.home-blog {
+  width: 32.5%;
+  background: #282828;
+  color: #FFFFFF;
+}
+
+.home-content {
+  width: 67.5%;
+  padding: 1em 0 0 2.5%;
+  box-sizing: border-box;
+}
+
+.home-content .foresite-link-column {
+  column-count: 2;
+  column-gap: 3em;
+}
+
+.home-content .foresite-link {
+  display: inline-block;
+  padding: 0.6em 7.5% 0.6em 0;
+}
+
+.home-content A:link,
+.home-content A:visited {
+  color: #2D2D2D;
+}
+
+.home-content A:hover {
+  color: #F7941D;
+}
+
+
+
+
+
+
+
+@media only screen and (max-width: 200px) {
+  .site-width { width: 96%; }
+}
