@@ -107,7 +107,7 @@ function get_foresite_links($atts, $content = null) {
       $count++;
     endwhile;
     
-    echo "<div class=\"foresite-link-column\">";
+    echo "<div id=\"foresite-link-column\">";
     echo $col1;
     echo $col2;
     echo "</div>";
