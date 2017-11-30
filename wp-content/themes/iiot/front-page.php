@@ -12,6 +12,13 @@ get_header(); ?>
 
 <div class="site-width content">
 	<div class="home-content">
+		<script src="<?php echo get_template_directory_uri(); ?>/inc/masonry.pkgd.min.js"></script>
+		<script type="text/javascript">
+		  jQuery(document).ready(function() {
+		    jQuery('#foresite-link-column').masonry({ itemSelector: '.foresite-link', horizontalOrder: true });
+		  });
+		</script>
+
 		<?php
 		while ( have_posts() ) : the_post();
 			the_content();
@@ -44,8 +51,8 @@ get_header(); ?>
 
 <img src="<?php echo get_template_directory_uri(); ?>/images/wifi.png" alt="" id="home-background">
 <script type="text/javascript">
-    jQuery(window).on('load resize', function(){
-    	jQuery('#home-background').height((jQuery('#foresite-link-column').height()/100)*80);
+  jQuery(window).on('load resize', function(){
+    jQuery('#home-background').height((jQuery('#foresite-link-column').height()/100)*80);
   });
 </script>
 

@@ -85,33 +85,14 @@ function get_foresite_links($atts, $content = null) {
   $query = new WP_Query($args);
 
   if ($query->have_posts()) :
-    $count = 1;
-    $col1 = "";
-    $col2 = "";
-
     while ($query->have_posts() ) : $query->the_post();
-      $col_content = "";
-
-      if ($wrap == "yes") $col_content .= "<div class=\"foresite-link\">\n";
-      
-      $col_content .= "<a href=\"" . esc_html(get_post_meta(get_the_ID(), 'foresite_link_url', true)) . "\">" . get_the_title() . "</a>\n";
-      
-      if ($wrap == "yes") $col_content .= "</div>\n";
-
-      if ($count % 2 == 0) {
-        $col2 .= $col_content;
-      } else {
-        $col1 .= $col_content;
-      }
-
-      $count++;
+      if ($wrap == "yes") echo "<div class=\"foresite-link\">";
+      ?>
+      <a href="<?php echo esc_html(get_post_meta(get_the_ID(), 'foresite_link_url', true)); ?>"><?php the_title(); ?></a>
+      <?php
+      if ($wrap == "yes") echo "</div>";
     endwhile;
-    
-    echo "<div id=\"foresite-link-column\">";
-    echo $col1;
-    echo $col2;
-    echo "</div>";
-  endif; 
+  endif;
 
   wp_reset_query();
 

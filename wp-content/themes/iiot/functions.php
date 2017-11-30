@@ -27,7 +27,7 @@ function my_oembed_filter($html, $url, $attr, $post_ID) {
 
 
 // Break excerpt at sentence end
-function end_with_sentence( $excerpt ) {
+function end_with_sentence($excerpt) {
   $allowed_ends = array('.', '!', '?', '...');
   $number_sentences = 2;
   $excerpt_chunk = $excerpt;
@@ -51,10 +51,7 @@ function end_with_sentence( $excerpt ) {
 add_filter('get_the_excerpt', 'end_with_sentence');
 
 
-/* 
- * Change WordPress default gallery output
- * http://wpsites.org/?p=10510/
- */
+// Change WordPress default gallery output (http://wpsites.org/?p=10510/)
 add_filter('post_gallery', 'FG_post_gallery', 10, 2);
 function FG_post_gallery($output, $attr) {
   global $post;
@@ -95,7 +92,6 @@ function FG_post_gallery($output, $attr) {
   // Here's your actual output, you may customize it to your need
   $output = "<div class=\"single-post-gallery gallery-columns-" . $columns . " cf\">\n";
 
-  // Now you loop through each attachment
   foreach ($attachments as $id => $attachment) {
     $img = wp_get_attachment_image_src($id, 'full');
 
@@ -110,5 +106,16 @@ function FG_post_gallery($output, $attr) {
 add_filter('the_content', 'filter_ptags_on_images');
 function filter_ptags_on_images($content){
   return preg_replace('/<p>\s*(<a .*>)?\s*(<img .* \/>)\s*(<\/a>)?\s*<\/p>/iU', '\1\2\3', $content);
+}
+
+
+// Remove visual editor from home page
+add_filter('user_can_richedit', 'FG_remove_richedit');
+function FG_remove_richedit($can) {
+  global $post;
+
+  if ($post->ID == 2) return false;
+
+  return $can;
 }
 ?>
