@@ -27,7 +27,7 @@ get_header(); ?>
 	</div>
 
 	<div class="home-blog">
-		<a href="<?php echo home_url(); ?>/blog/" class="blog-home-link">Blog Index</a>
+		<a href="<?php echo home_url(); ?>/blog/" class="blog-home-link">Featured Articles</a>
 
 		<?php
 		$home_posts = get_posts(array('posts_per_page' => 3 ));

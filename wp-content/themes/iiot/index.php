@@ -18,7 +18,7 @@ get_header(); ?>
 	<?php if (!is_single()) : ?>
 
 	  <div class="blog-index">
-	  	<h1 class="blog-title">Blog Index</h1>
+	  	<h1 class="blog-title">Featured Articles</h1>
 
 	  	<?php while (have_posts()) : the_post(); get_template_part('content'); endwhile; ?>
 
