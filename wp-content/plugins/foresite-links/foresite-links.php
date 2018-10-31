@@ -103,7 +103,7 @@ function get_foresite_links($atts, $content = null) {
 
 add_action('admin_menu', 'foresite_links_register_instructions');
 function foresite_links_register_instructions() {
-  add_submenu_page( 'edit.php?post_type=foresite_link', __('How It Works', 'foresite-links'), __('How It Works', 'foresite-links'), 'manage_options', 'foresite-links-instructions', 'foresite_links_instructions' );
+  add_submenu_page( 'edit.php?post_type=foresite_link', __('How It Works', 'foresite-links'), __('How It Works', 'foresite-links'), 'read', 'foresite-links-instructions', 'foresite_links_instructions' );
 }
 
 function foresite_links_instructions() { ?>
